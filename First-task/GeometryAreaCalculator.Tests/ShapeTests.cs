@@ -34,4 +34,56 @@ public class ShapeTests
         var expectedArea = 6.0; // Площадь прямоугольного треугольника с сторонами 3, 4, 5
         Assert.Equal(expectedArea, areaCalculator.Area);
     }
+
+    [Fact]
+    public void Triangle_IsRightAngled_ShouldReturnTrue_WhenTriangleIsRightAngled()
+    {
+        // Arrange
+        var triangle = new Triangle(3.0, 4.0, 5.0);
+
+        // Act
+        var isRightAngled = triangle.IsRightAngled();
+
+        // Assert
+        Assert.True(isRightAngled); // 3-4-5 — это прямоугольный треугольник
+    }
+
+    [Fact]
+    public void Triangle_IsRightAngled_ShouldReturnFalse_WhenTriangleIsNotRightAngled()
+    {
+        // Arrange
+        var triangle = new Triangle(5.0, 5.0, 5.0); // Равносторонний треугольник
+
+        // Act
+        var isRightAngled = triangle.IsRightAngled();
+
+        // Assert
+        Assert.False(isRightAngled); // Равносторонний треугольник не может быть прямоугольным
+    }
+
+    [Fact]
+    public void Triangle_IsRightAngled_ShouldHandleNonRightAngledCasesCorrectly()
+    {
+        // Arrange
+        var triangle = new Triangle(2.0, 2.0, 3.0);
+
+        // Act
+        var isRightAngled = triangle.IsRightAngled();
+
+        // Assert
+        Assert.False(isRightAngled); // Этот треугольник не является прямоугольным
+    }
+
+    [Fact]
+    public void Triangle_IsRightAngled_ShouldHandleFloatingPointPrecision()
+    {
+        // Arrange
+        var triangle = new Triangle(1.0, Math.Sqrt(2), 1.0); // Почти прямоугольный треугольник
+
+        // Act
+        var isRightAngled = triangle.IsRightAngled();
+
+        // Assert
+        Assert.True(isRightAngled); // Ожидаем, что математически это прямоугольный треугольник
+    }
 }
