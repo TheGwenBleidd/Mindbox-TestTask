@@ -22,22 +22,8 @@ public sealed class Triangle(double sideA, double sideB, double sideC) : IShape
     // тоже понадобилась подобна€ специфична€ проверка.
     public bool IsRightAngled()
     {
-        // Ћогика может выгл€деть не самой красивой и читабельной, но € честно не пон€л,
-        // что именно оцениваетс€ Ч знание геометрии или просто реализаци€.
-        // ¬з€л бы с интернета, но решил написать своЄ. 
-        // Ѕыл вариант сделать решение лаконичнее через массив, но решил оставить это
-        // как есть ради производительности.
-        if (SideA > SideB && SideA > SideC)
-        {
-            return Math.Abs(Math.Pow(SideA, 2) - (Math.Pow(SideB, 2) + Math.Pow(SideC, 2))) < 0.0001;
-        }
-        else if (SideB > SideA && SideB > SideC)
-        {
-            return Math.Abs(Math.Pow(SideB, 2) - (Math.Pow(SideA, 2) + Math.Pow(SideC, 2))) < 0.0001;
-        }
-        else
-        {
-            return Math.Abs(Math.Pow(SideC, 2) - (Math.Pow(SideA, 2) + Math.Pow(SideB, 2))) < 0.0001;
-        }
+        double[] sides = { SideA, SideB, SideC };
+        Array.Sort(sides);
+        return Math.Abs(Math.Pow(sides[2], 2) - (Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2))) < 0.0001;
     }
 }
