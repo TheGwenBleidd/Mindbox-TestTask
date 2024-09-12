@@ -1,4 +1,4 @@
-using GeometryAreaCalculator.Lib.Figures.Abstractions;
+using GeometryAreaCalculator.Lib.Abstractions;
 
 namespace GeometryAreaCalculator.Lib.Figures;
 

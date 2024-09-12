@@ -1,4 +1,4 @@
-﻿namespace GeometryAreaCalculator.Lib.Figures.Abstractions;
+﻿namespace GeometryAreaCalculator.Lib.Abstractions;
 
 public interface IShape
 {

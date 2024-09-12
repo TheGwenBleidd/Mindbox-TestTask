@@ -1,4 +1,6 @@
-namespace GeometryAreaCalculator.Lib.Figures.Abstractions;
+using GeometryAreaCalculator.Lib.Figures;
+
+namespace GeometryAreaCalculator.Lib.Abstractions;
 
 public interface IShapeVisitor
 {

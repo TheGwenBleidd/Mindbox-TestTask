@@ -1,5 +1,5 @@
+using GeometryAreaCalculator.Lib.Abstractions;
 using GeometryAreaCalculator.Lib.Figures;
-using GeometryAreaCalculator.Lib.Figures.Abstractions;
 
 namespace GeometryAreaCalculator.Lib.Visitors
 {
